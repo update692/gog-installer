@@ -232,8 +232,12 @@ namespace GogInstaller
                             status = "Running... (Aborted)";
                             break;
                         default:
-                            color = Color.Red;
-                            status = $"Return: {exitCode}";
+                            {
+                                // Format the return code as hex 0xC000041D
+                                string hexError = "0x" + exitCode.ToString("X8");
+                                color = Color.Red;
+                                status = $"Return: {hexError}";
+                            }
                             break;
                     }
                     row.Cells["colStatus"].Style.ForeColor = color;
