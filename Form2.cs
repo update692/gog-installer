@@ -90,6 +90,10 @@ namespace GogInstaller
                     lblInfo.Text = fbd.SelectedPath;
                     lblInfo.Update();
 
+                    // Save last folder to settings
+                    Properties.Settings.Default.LastFolder = fbd.SelectedPath;
+                    Properties.Settings.Default.Save();
+
                     // 1. Get all .exe files in the selected directory
                     // Use SearchOption.TopDirectoryOnly or SearchOption.AllDirectories
                     string[] exeFiles = Directory.GetFiles(fbd.SelectedPath, "*.exe", checkboxRecursive.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
