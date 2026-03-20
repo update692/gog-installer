@@ -41,8 +41,8 @@
             this.btnTools = new System.Windows.Forms.Button();
             this.popupTools = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exploreTEMPFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearTEMPFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.editConfigFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.popupTools.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,9 +150,9 @@
             // 
             this.popupTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exploreTEMPFolderToolStripMenuItem,
-            this.clearTEMPFolderToolStripMenuItem});
+            this.editConfigFileToolStripMenuItem});
             this.popupTools.Name = "popupTools";
-            this.popupTools.Size = new System.Drawing.Size(181, 48);
+            this.popupTools.Size = new System.Drawing.Size(181, 70);
             // 
             // exploreTEMPFolderToolStripMenuItem
             // 
@@ -161,13 +161,12 @@
             this.exploreTEMPFolderToolStripMenuItem.Text = "Explore TEMP folder";
             this.exploreTEMPFolderToolStripMenuItem.Click += new System.EventHandler(this.exploreTEMPFolderToolStripMenuItem_Click);
             // 
-            // clearTEMPFolderToolStripMenuItem
+            // editConfigFileToolStripMenuItem
             // 
-            this.clearTEMPFolderToolStripMenuItem.Enabled = false;
-            this.clearTEMPFolderToolStripMenuItem.Name = "clearTEMPFolderToolStripMenuItem";
-            this.clearTEMPFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clearTEMPFolderToolStripMenuItem.Text = "Clear TEMP folder";
-            this.clearTEMPFolderToolStripMenuItem.Click += new System.EventHandler(this.clearTEMPFolderToolStripMenuItem_Click);
+            this.editConfigFileToolStripMenuItem.Name = "editConfigFileToolStripMenuItem";
+            this.editConfigFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editConfigFileToolStripMenuItem.Text = "Edit config file";
+            this.editConfigFileToolStripMenuItem.Click += new System.EventHandler(this.editConfigFileToolStripMenuItem_Click);
             // 
             // MainDialog
             // 
@@ -210,8 +209,8 @@
         private System.Windows.Forms.Button btnTools;
         private System.Windows.Forms.ContextMenuStrip popupTools;
         private System.Windows.Forms.ToolStripMenuItem exploreTEMPFolderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clearTEMPFolderToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem editConfigFileToolStripMenuItem;
     }
 }
 

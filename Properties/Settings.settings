@@ -11,6 +11,9 @@
     <Setting Name="BatchCmd" Type="System.String" Scope="User">
       <Value Profile="(Default)">/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART</Value>
     </Setting>
+    <Setting Name="BatchCmdDefault" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART</Value>
+    </Setting>
     <Setting Name="BatchScanSubfolders" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>

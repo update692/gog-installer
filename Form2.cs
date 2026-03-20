@@ -184,25 +184,53 @@ namespace GogInstaller
                     // Report status
                     Color color;
                     string status;
-                    if (exitCode == 0)
+                    switch (exitCode)
                     {
-                        color = Color.Green;
-                        status = "Return: 0 (Ok)";
-                    }
-                    else if (exitCode == -66)
-                    {
-                        color = SystemColors.WindowText;
-                        status = "Killed";
-                    }
-                    else if (exitCode == -67)
-                    {
-                        color = SystemColors.WindowText;
-                        status = "Running... (Aborted)";
-                    }
-                    else
-                    {
-                        color = Color.Red;
-                        status = $"Return: {exitCode}";
+                        case 0:
+                            color = Color.Green;
+                            status = $"Return: {exitCode} (Ok)";
+                            break;
+                        case 1:
+                            color = Color.Red;
+                            status = $"Return: {exitCode} (Failed to initialize)";
+                            break;
+                        case 2:
+                            color = Color.Red;
+                            status = $"Return: {exitCode} (User decline)";
+                            break;
+                        case 3:
+                        case 4:
+                            color = Color.Red;
+                            status = $"Return: {exitCode} (Fatal error)";
+                            break;
+                        case 5:
+                            color = Color.Red;
+                            status = $"Return: {exitCode} (User interrupt)";
+                            break;
+                        case 6:
+                            color = Color.Red;
+                            status = $"Return: {exitCode} (Terminated)";
+                            break;
+                        case 7:
+                            color = Color.Red;
+                            status = $"Return: {exitCode} (Cannot proceed)";
+                            break;
+                        case 8:
+                            color = Color.Red;
+                            status = $"Return: {exitCode} (Reboot required)";
+                            break;
+                        case -66:
+                            color = SystemColors.WindowText;
+                            status = "Killed";
+                            break;
+                        case -67:
+                            color = SystemColors.WindowText;
+                            status = "Running... (Aborted)";
+                            break;
+                        default:
+                            color = Color.Red;
+                            status = $"Return: {exitCode}";
+                            break;
                     }
                     row.Cells["colStatus"].Style.ForeColor = color;
                     row.Cells["colStatus"].Value = status;
@@ -321,14 +349,18 @@ namespace GogInstaller
 
         private void BatchDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.BatchCmd = textboxParams.Text;
+            Properties.Settings.Default.BatchCmd = textboxParams.Text.Trim();
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.BatchCmd))
+            {
+                Properties.Settings.Default.BatchCmdDefault = Properties.Settings.Default.BatchCmd;
+            }
             Properties.Settings.Default.BatchScanSubfolders = checkboxRecursive.Checked;
             Properties.Settings.Default.Save();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            textboxParams.Text = "/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART";
+            textboxParams.Text = Properties.Settings.Default.BatchCmdDefault;
         }
 
         private void btnClear_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Configuration;  // Add a reference to System.Configuration.dll
 
 namespace GogInstaller
 {
@@ -294,7 +295,7 @@ namespace GogInstaller
         {
             var tempFolder = Environment.GetEnvironmentVariable("TEMP");
             exploreTEMPFolderToolStripMenuItem.ToolTipText = tempFolder;
-            clearTEMPFolderToolStripMenuItem.ToolTipText = tempFolder;
+            editConfigFileToolStripMenuItem.ToolTipText = "Close the program before editing config file";
             popupTools.Show(btnTools, new Point(0, btnTools.Height));
         }
 
@@ -319,9 +320,15 @@ namespace GogInstaller
             Process.Start(psi);
         }
 
-        private void clearTEMPFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void editConfigFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Not implemented
+            var psi = new ProcessStartInfo
+            {
+                FileName = "notepad.exe",
+                Arguments = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
     }
 

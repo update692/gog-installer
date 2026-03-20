@@ -61,6 +61,18 @@ namespace GogInstaller.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART")]
+        public string BatchCmdDefault {
+            get {
+                return ((string)(this["BatchCmdDefault"]));
+            }
+            set {
+                this["BatchCmdDefault"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool BatchScanSubfolders {
             get {
