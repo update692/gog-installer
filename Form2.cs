@@ -457,8 +457,7 @@ namespace GogInstaller
             {
                 _helpDialog = new TextHelpDialog(Properties.Resources.ParamsHelp);
             }
-            _helpDialog.Show();
-            _helpDialog.Activate();
+            _helpDialog.MyShow();
         }
     }
 }

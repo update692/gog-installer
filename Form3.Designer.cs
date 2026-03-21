@@ -36,7 +36,7 @@
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnOk.Location = new System.Drawing.Point(536, 626);
+            this.btnOk.Location = new System.Drawing.Point(432, 626);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 0;
@@ -55,21 +55,23 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(600, 608);
+            this.textBox1.Size = new System.Drawing.Size(496, 608);
             this.textBox1.TabIndex = 1;
             // 
             // TextHelpDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 661);
+            this.ClientSize = new System.Drawing.Size(520, 661);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnOk);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyPreview = true;
             this.Name = "TextHelpDialog";
             this.Text = "Help";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TextHelpDialog_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextHelpDialog_KeyDown);
+            this.Resize += new System.EventHandler(this.TextHelpDialog_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
