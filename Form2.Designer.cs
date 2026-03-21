@@ -37,13 +37,13 @@
             this.btnUncheck = new System.Windows.Forms.Button();
             this.btnBatchRun = new System.Windows.Forms.Button();
             this.btnCancelBatch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.textboxParams = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
+            this.linklabelParams = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,17 +144,6 @@
             this.btnCancelBatch.Visible = false;
             this.btnCancelBatch.Click += new System.EventHandler(this.btnCancelBatch_Click);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 440);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Command line parameters:";
-            // 
             // textboxParams
             // 
             this.textboxParams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -211,18 +200,32 @@
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
+            // linklabelParams
+            // 
+            this.linklabelParams.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.linklabelParams.AutoSize = true;
+            this.linklabelParams.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linklabelParams.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklabelParams.Location = new System.Drawing.Point(11, 442);
+            this.linklabelParams.Name = "linklabelParams";
+            this.linklabelParams.Size = new System.Drawing.Size(131, 13);
+            this.linklabelParams.TabIndex = 14;
+            this.linklabelParams.TabStop = true;
+            this.linklabelParams.Text = "Command line parameters:";
+            this.linklabelParams.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabelParams_LinkClicked);
+            // 
             // BatchDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
+            this.Controls.Add(this.linklabelParams);
             this.Controls.Add(this.btnBatchRun);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.textboxParams);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelBatch);
             this.Controls.Add(this.btnUncheck);
             this.Controls.Add(this.btnCheck);
@@ -251,12 +254,12 @@
         private System.Windows.Forms.Button btnUncheck;
         private System.Windows.Forms.Button btnBatchRun;
         private System.Windows.Forms.Button btnCancelBatch;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textboxParams;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.LinkLabel linklabelParams;
     }
 }

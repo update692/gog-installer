@@ -16,6 +16,7 @@ namespace GogInstaller
         private MainDialog _mainDialog;
         private CancellationTokenSource _batchCts;
         private bool _killProcess = false;
+        private TextHelpDialog _helpDialog = null;
 
         public BatchDialog(MainDialog main)
         {
@@ -448,6 +449,16 @@ namespace GogInstaller
 
             // Ensure the row is visible if it moves off-screen
             dgvFiles.FirstDisplayedScrollingRowIndex = Math.Max(0, newIndex - 2);
+        }
+
+        private void linklabelParams_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (_helpDialog == null)
+            {
+                _helpDialog = new TextHelpDialog(Properties.Resources.ParamsHelp);
+            }
+            _helpDialog.Show();
+            _helpDialog.Activate();
         }
     }
 }
